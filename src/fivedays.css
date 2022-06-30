@@ -1,0 +1,77 @@
+.li-day{
+    list-style: none;
+    
+    align-items: center;
+    padding: 0 0 0 15px;
+    
+}
+.item{
+    padding-inline-start: 0px !important;
+}
+.li-child{
+    
+   
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--violet-color) !important;
+    padding: 5px 10px;
+}
+/* li div{
+    font-size: 25px;
+    font-weight: 500;
+    font-style: italic;
+} */
+.li-child .value-t{
+    
+    margin: 0 10px;
+    
+   
+}
+.value-t{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.temperature{
+    width: 40%;
+    text-align: center;
+}
+.max-value{
+    /* font-size: 25px; */
+}
+.dates{
+    /* font-size: medium; */
+}
+.css-mhc70k-MuiGrid-root{
+    margin-top: 0 !important;
+}
+.css-mhc70k-MuiGrid-root>.MuiGrid-item{
+    padding-left: 0px !important;
+}
+.css-mhc70k-MuiGrid-root>.MuiGrid-item {
+    padding-top: 0px !important;
+}
+.css-1j631ll-MuiPaper-root{
+    padding: 0px !important;
+    box-shadow: none !important;
+}
+.ul-5day{
+    padding-left: 0px !important;
+    margin: 0;
+    width: 100%;
+    /* margin-block-start: 0.698em; */
+    margin-block-end: 1em;
+    border-radius: 2px !important;
+   
+}
+.icon-temperature{
+    display: flex;
+    height: 40px;
+}
+.css-1j631ll-MuiPaper-root{
+    border-radius: 0px !important;
+}
+.temperature-days{
+    display: flex;
+}

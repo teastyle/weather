@@ -1,13 +1,21 @@
+
 import './App.css';
+
+import GetApi from './getAPI';
 import Search from './search';
-import Today from './today';
+
+
+
+
 
 
 function App() {
   return (
     <div className='app'>
-      <Search/>
-      <Today/>
+     
+     
+      <GetApi/>
+      
     </div>
       
   );

@@ -5,25 +5,21 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import "./today.css";
-
+import Day from "./day";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(2),
-  // textAlign: 'center',
-  color: theme.palette.text.secondary,
-}));
-export default function Today() {
-  const [error, setError] = useState(null);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [items, setItems] = useState([]);
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(2),
+    // textAlign: 'center',
+    color: theme.palette.text.secondary,
+  }));
   const [keyLocation, setKeyLocation] = useState(353981);
 
-  // const urlApi = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/";
-  // const keyApi =
-  //   keyLocation +
-  //   "?apikey=U0mG2xRMp2Ndzm44DBvJ589zeJAxUD7F&language=vi&details=true&metric=true";
+  const urlApi = "https://dataservice.accuweather.com/forecasts/v1/daily/5day/";
+  const keyApi =
+    keyLocation +
+    "?apikey=U0mG2xRMp2Ndzm44DBvJ589zeJAxUD7F&language=vi&details=true&metric=true";
 
   var iconID = 1;
 
@@ -34,28 +30,9 @@ export default function Today() {
     iconID = a;
   }
 
-  useEffect(() => {
-    fetch(urlApi + keyApi)
-      .then((res) => res.json())
-      .then(
-        (result) => {
-          setIsLoaded(true);
-          setItems(result);
-        },
-        (error) => {
-          setIsLoaded(true);
-          setError(error);
-        }
-      );
-  }, []);
 
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  } else if (!isLoaded) {
-    return <CircularColor />;
-  } else {
-    return (
-      <ul>
+
+<ul>
         
 
         <div> THỜI TIẾT CÁC NGÀY TIẾP THEO </div>
@@ -72,7 +49,7 @@ export default function Today() {
 
                         <div className="value-t">
                           <div>
-                          
+                          {changerurl(item.Day.Icon)}
                             <img src={urlIcon} width="30px" alt="icon"></img>
                           </div>
                           <div className="max-value">
@@ -95,6 +72,3 @@ export default function Today() {
           </li>
         ))}
       </ul>
-    );
-  }
-}
